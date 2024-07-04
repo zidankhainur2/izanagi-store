@@ -2,32 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 212 67% 20%;
+    --foreground: 0 0% 98%;
+
+    --card: 212 67% 20%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 212 67% 20%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 212 67% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 212 67% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 212 67% 20%;
+    --muted-foreground: 0 0% 98%;
+
+    --accent: 212 67% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 212 67% 20%;
+    --input: 212 67% 20%;
+    --ring: 212 67% 20%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 212 67% 20%;
+    --foreground: 0 0% 98%;
+
+    --card: 212 67% 20%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 212 67% 20%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 212 67% 20%;
+
+    --secondary: 212 67% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 212 67% 20%;
+    --muted-foreground: 0 0% 98%;
+
+    --accent: 212 67% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 212 67% 20%;
+    --input: 212 67% 20%;
+    --ring: 212 67% 20%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-gray-50 text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.hero-section {
+  position: relative;
+  background-image: url("/bg-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px; /* Use vh instead of fixed pixel height */
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  /* Adjust as needed for md-sm size */
+  .hero-section::before {
+    z-index: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden {
+    display: none;
+  }
+
+  .block {
+    display: block;
   }
 }
