@@ -1,9 +1,8 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
-import { NextResponse } from "next/server";
 
 export default clerkMiddleware({
-  apiKey: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
-  secretKey: process.env.CLERK_SECRET_KEY,
+  apiKey: "pk_test_d2lyZWQta2l0ZS04OS5jbGVyay5hY2NvdW50cy5kZXYk",
+  secretKey: "sk_test_RiM7GWf9dbvhfoQAKZohhh9Mv7dnX2dDovjj8q4Nsf",
 });
 
 export const config = {
