@@ -3,6 +3,7 @@ import Hero from "../_components/Hero";
 import Popups from "../_components/Popups";
 import Collection from "../_components/Collection";
 import Content from "../_components/Content";
+import Footer from "../_components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Popups />
       <Collection />
       <Content />
+      <Footer />
     </div>
   );
 }
